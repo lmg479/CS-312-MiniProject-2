@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>State your name to get a joke!</h1>
+
+        <form action="/jokes" method="POST">
+            <label for="name">Enter Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">Get Joke</button>
+        </form>
+
+        <% if (joke) { %>
+            <p>Here is <%= name %>'s' joke:</p>
+            <h2><%= joke %></h2>
+        <% } %>
+
+        <% if (error) { %>
+            <p><%= error %></p>
+        <% } %>
+
+        <form action="/" method="GET">
+            <button type="submit">Reset</button>
+        </form>
+
+    </body>
+</html>
